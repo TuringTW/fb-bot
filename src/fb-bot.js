@@ -4,7 +4,7 @@ import request from 'request';
 import config from '../config';
 
 const app = express();
-const port = '7123';
+const port = '3000';
 const VERIFY_TOKEN = config.VERIFY_TOKEN;
 const PAGE_TOKEN = config.PAGE_TOKEN;
 
@@ -33,6 +33,9 @@ app.post('/webhook/', (req, res) => {
   }
   res.sendStatus(200);
 });
+app.get('/hello/', (req, res)=>{
+  res.send('hello world')
+})
 
 app.listen(port, () => console.log(`listening on port ${port}`));
 
